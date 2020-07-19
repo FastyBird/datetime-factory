@@ -58,7 +58,8 @@ class DateTimeFactoryExtension extends DI\CompilerExtension
 		}
 
 		$builder->addDefinition(null)
-			->setType(DateTimeFactory\DateTimeFactory::class);
+			->setType(DateTimeFactory\DateTimeFactory::class)
+			->setArgument('timezone', $configuration->timezone);
 	}
 
 	/**
@@ -69,7 +70,7 @@ class DateTimeFactoryExtension extends DI\CompilerExtension
 	 */
 	public static function register(
 		Nette\Configurator $config,
-		string $extensionName = 'nodeDateTime'
+		string $extensionName = 'dateTimeFactory'
 	): void {
 		$config->onCompile[] = function (
 			Nette\Configurator $config,

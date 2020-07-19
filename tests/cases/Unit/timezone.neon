@@ -1,0 +1,14 @@
+#
+# DateTime factory DI configuration
+#
+# @license		More in license.md
+# @copyright	https://www.fastybird.com
+# @author		Adam Kadlec <adam.kadlec@fastybird.com>
+# @package		FastyBird:DateTimeFactory!
+# @subpackage	config
+# @since		0.1.0
+#
+# @date			19.07.20
+
+dateTimeFactory:
+	timezone: 'Europe/Amsterdam'

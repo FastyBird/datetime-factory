@@ -6,25 +6,26 @@
  * @license        More in license.md
  * @copyright      https://www.fastybird.com
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>
- * @package        FastyBird:NodeDateTime!
+ * @package        FastyBird:DateTimeFactory!
  * @subpackage     common
  * @since          0.1.0
  *
  * @date           08.03.20
  */
 
-namespace FastyBird\NodeDateTime;
+namespace FastyBird\DateTimeFactory;
 
 use DateTimeImmutable;
 use DateTimeInterface;
 use DateTimeZone;
 use Nette;
 
-class DateFactory
+class DateTimeFactory
 {
 
 	use Nette\SmartObject;
 
+	/** @var DateTimeZone */
 	private $timezone;
 
 	public function __construct(
@@ -40,7 +41,7 @@ class DateFactory
 	{
 		$dateTime = new DateTimeImmutable();
 
-		$dateTime->setTimezone($this->timezone);
+		$dateTime = $dateTime->setTimezone($this->timezone);
 
 		return $dateTime;
 	}

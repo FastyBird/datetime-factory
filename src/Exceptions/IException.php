@@ -6,14 +6,14 @@
  * @license        More in license.md
  * @copyright      https://www.fastybird.com
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>
- * @package        FastyBird:NodeWebServer!
+ * @package        FastyBird:DateTimeFactory!
  * @subpackage     Exceptions
  * @since          0.1.0
  *
- * @date           23.02.20
+ * @date           19.07.20
  */
 
-namespace FastyBird\NodeWebServer\Exceptions;
+namespace FastyBird\DateTimeFactory\Exceptions;
 
 use Throwable;
 

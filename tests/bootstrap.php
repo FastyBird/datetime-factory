@@ -7,8 +7,6 @@ if (@!include __DIR__ . '/../vendor/autoload.php') {
 	exit(1);
 }
 
-define('FB_TEMP_DIR', __DIR__ . '/tmp');
-
 // Configure environment
 Environment::setupTester();
 Environment::setupTimezone('UTC');
