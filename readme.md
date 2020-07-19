@@ -1,11 +1,11 @@
 # FastyBird date & time factory library
 
-[![Build Status](https://img.shields.io/travis/FastyBird/datetime-factory.svg?style=flat-square)](https://travis-ci.org/FastyBird/datetime)
-[![Code coverage](https://img.shields.io/coveralls/FastyBird/datetime-factory.svg?style=flat-square)](https://coveralls.io/r/FastyBird/datetime)
+[![Build Status](https://img.shields.io/travis/FastyBird/datetime-factory.svg?style=flat-square)](https://travis-ci.org/FastyBird/datetime-factory)
+[![Code coverage](https://img.shields.io/coveralls/FastyBird/datetime-factory.svg?style=flat-square)](https://coveralls.io/r/FastyBird/datetime-factory)
 ![PHP from Travis config](https://img.shields.io/travis/php-v/fastybird/datetime-factory?style=flat-square)
-[![Licence](https://img.shields.io/packagist/l/FastyBird/datetime-factory.svg?style=flat-square)](https://packagist.org/packages/FastyBird/datetime)
-[![Downloads total](https://img.shields.io/packagist/dt/FastyBird/datetime-factory.svg?style=flat-square)](https://packagist.org/packages/FastyBird/datetime)
-[![Latest stable](https://img.shields.io/packagist/v/FastyBird/datetime-factory.svg?style=flat-square)](https://packagist.org/packages/FastyBird/datetime)
+[![Licence](https://img.shields.io/packagist/l/FastyBird/datetime-factory.svg?style=flat-square)](https://packagist.org/packages/FastyBird/datetime-factory)
+[![Downloads total](https://img.shields.io/packagist/dt/FastyBird/datetime-factory.svg?style=flat-square)](https://packagist.org/packages/FastyBird/datetime-factory)
+[![Latest stable](https://img.shields.io/packagist/v/FastyBird/datetime-factory.svg?style=flat-square)](https://packagist.org/packages/FastyBird/datetime-factory)
 [![PHPStan](https://img.shields.io/badge/PHPStan-enabled-brightgreen.svg?style=flat-square)](https://github.com/phpstan/phpstan)
 
 ## What is FastyBird node date & time factory library?
