@@ -1,4 +1,4 @@
-# FastyBird date & time library
+# FastyBird date & time factory library
 
 [![Build Status](https://img.shields.io/travis/FastyBird/datetime-factory.svg?style=flat-square)](https://travis-ci.org/FastyBird/datetime)
 [![Code coverage](https://img.shields.io/coveralls/FastyBird/datetime-factory.svg?style=flat-square)](https://coveralls.io/r/FastyBird/datetime)
