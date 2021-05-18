@@ -24,7 +24,7 @@ use Nette\Schema;
 use stdClass;
 
 /**
- * Microservice node helpers extension container
+ * Date&Time factory extension container
  *
  * @package        FastyBird:DateTimeFactory!
  * @subpackage     DI
