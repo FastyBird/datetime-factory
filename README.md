@@ -8,7 +8,7 @@
 [![Latest stable](https://badgen.net/packagist/v/FastyBird/datetime-factory/latest?cache=300&style=flast-square)](https://packagist.org/packages/FastyBird/datetime-factory)
 [![PHPStan](https://img.shields.io/badge/PHPStan-enabled-brightgreen.svg?style=flat-square)](https://github.com/phpstan/phpstan)
 
-## What is FastyBird node date & time factory library?
+## What is FastyBird date & time factory library?
 
 This is a [Nette framework](https://nette.org) extension which create date & time factory with ability to set timezone
 
