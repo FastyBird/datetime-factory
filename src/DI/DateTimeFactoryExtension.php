@@ -15,7 +15,6 @@
 
 namespace FastyBird\DateTimeFactory\DI;
 
-use Cassandra\Date;
 use DateTimeZone;
 use FastyBird\DateTimeFactory;
 use FastyBird\DateTimeFactory\Exceptions;
