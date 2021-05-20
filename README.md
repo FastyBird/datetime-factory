@@ -17,7 +17,7 @@ This is a [Nette framework](https://nette.org) extension which create date & tim
 The best way to install **fastybird/datetime-factory** is using [Composer](http://getcomposer.org/):
 
 ```sh
-$ composer require fastybird/datetime-factory
+composer require fastybird/datetime-factory
 ```
 
 ## Documentation

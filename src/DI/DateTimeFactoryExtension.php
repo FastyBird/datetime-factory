@@ -15,6 +15,7 @@
 
 namespace FastyBird\DateTimeFactory\DI;
 
+use Cassandra\Date;
 use DateTimeZone;
 use FastyBird\DateTimeFactory;
 use FastyBird\DateTimeFactory\Exceptions;
@@ -40,7 +41,7 @@ class DateTimeFactoryExtension extends DI\CompilerExtension
 	public function getConfigSchema(): Schema\Schema
 	{
 		return Schema\Expect::structure([
-			'timezone'   => Schema\Expect::string('Europe/Prague'),
+			'timezone'   => Schema\Expect::string('UTC'),
 		]);
 	}
 
@@ -53,7 +54,9 @@ class DateTimeFactoryExtension extends DI\CompilerExtension
 		/** @var stdClass $configuration */
 		$configuration = $this->getConfig();
 
-		if (!in_array($configuration->timezone, DateTimeZone::listIdentifiers(), true)) {
+		if (
+			!in_array($configuration->timezone, DateTimeZone::listIdentifiers(), true)
+		) {
 			throw new Exceptions\InvalidArgumentException('Timezone have to be valid PHP timezone string');
 		}
 

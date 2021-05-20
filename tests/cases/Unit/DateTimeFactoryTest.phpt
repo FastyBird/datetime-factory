@@ -50,7 +50,7 @@ final class DateTimeFactoryTest extends BaseMockeryTestCase
 	{
 		$dateTimeFactory = $this->createContainer()->getByType(DateTimeFactory\DateTimeFactory::class);
 
-		Assert::same('Europe/Prague', $dateTimeFactory->getNow()->getTimezone()->getName());
+		Assert::same('UTC', $dateTimeFactory->getNow()->getTimezone()->getName());
 
 		$dateTimeFactory = $this->createContainer(__DIR__ . '/timezone.neon')->getByType(DateTimeFactory\DateTimeFactory::class);
 
