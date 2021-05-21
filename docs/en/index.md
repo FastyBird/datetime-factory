@@ -63,3 +63,6 @@ class YourCustomPresenter
 ```
 
 The only one method of factory: `$dateTimeFactory->getNow()` is returning immutable DateTime object.
+
+***
+Homepage [http://www.fastybird.com](http://www.fastybird.com) and repository [https://github.com/FastyBird/datetime-factory](https://github.com/FastyBird/datetime-factory).
