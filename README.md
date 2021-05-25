@@ -22,7 +22,7 @@ composer require fastybird/datetime-factory
 
 ## Documentation
 
-Learn how to generate immutable time with service in [documentation](https://github.com/FastyBird/datetime-factory/blob/master/docs/en/index.md).
+Learn how to generate immutable time with service in [documentation](https://github.com/FastyBird/datetime-factory/blob/master/.docs/en/index.md).
 
 ***
 Homepage [http://www.fastybird.com](http://www.fastybird.com) and repository [https://github.com/FastyBird/datetime-factory](https://github.com/FastyBird/datetime-factory).

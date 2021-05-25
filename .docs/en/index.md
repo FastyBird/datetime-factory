@@ -10,7 +10,7 @@ The best way to install **fastybird/datetime-factory** is using [Composer](http:
 composer require fastybird/datetime-factory
 ```
 
-After that you have to register extension in *config.neon*.
+After that, you have to register extension in *config.neon*.
 
 ```neon
 extensions:
