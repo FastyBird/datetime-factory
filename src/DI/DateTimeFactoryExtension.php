@@ -59,7 +59,7 @@ class DateTimeFactoryExtension extends DI\CompilerExtension
 			throw new Exceptions\InvalidArgumentException('Timezone have to be valid PHP timezone string');
 		}
 
-		$builder->addDefinition(null)
+		$builder->addDefinition($this->prefix('date-time.factory'), new DI\Definitions\ServiceDefinition())
 			->setType(DateTimeFactory\DateTimeFactory::class)
 			->setArgument('timezone', $configuration->timezone);
 	}
