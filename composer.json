@@ -1,7 +1,7 @@
 {
   "name": "fastybird/datetime-factory",
   "type": "library",
-  "description": "FastyBird date & time helpers with support timezones",
+  "description": "Date & time service factory with timezones support",
   "keywords": [
     "fastybird",
     "fb",
