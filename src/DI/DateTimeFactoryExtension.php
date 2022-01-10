@@ -35,12 +35,30 @@ class DateTimeFactoryExtension extends DI\CompilerExtension
 {
 
 	/**
+	 * @param Nette\Configurator $config
+	 * @param string $extensionName
+	 *
+	 * @return void
+	 */
+	public static function register(
+		Nette\Configurator $config,
+		string $extensionName = 'dateTimeFactory'
+	): void {
+		$config->onCompile[] = function (
+			Nette\Configurator $config,
+			DI\Compiler $compiler
+		) use ($extensionName): void {
+			$compiler->addExtension($extensionName, new DateTimeFactoryExtension());
+		};
+	}
+
+	/**
 	 * {@inheritdoc}
 	 */
 	public function getConfigSchema(): Schema\Schema
 	{
 		return Schema\Expect::structure([
-			'timezone'   => Schema\Expect::string('UTC'),
+			'timezone' => Schema\Expect::string('UTC'),
 		]);
 	}
 
@@ -62,24 +80,6 @@ class DateTimeFactoryExtension extends DI\CompilerExtension
 		$builder->addDefinition($this->prefix('datetime.factory'), new DI\Definitions\ServiceDefinition())
 			->setType(DateTimeFactory\DateTimeFactory::class)
 			->setArgument('timezone', $configuration->timezone);
-	}
-
-	/**
-	 * @param Nette\Configurator $config
-	 * @param string $extensionName
-	 *
-	 * @return void
-	 */
-	public static function register(
-		Nette\Configurator $config,
-		string $extensionName = 'dateTimeFactory'
-	): void {
-		$config->onCompile[] = function (
-			Nette\Configurator $config,
-			DI\Compiler $compiler
-		) use ($extensionName): void {
-			$compiler->addExtension($extensionName, new DateTimeFactoryExtension());
-		};
 	}
 
 }

@@ -32,7 +32,8 @@ Where:
 
 ## Use DateTimeFactory
 
-This extension register DateTimeFactory to you container. This service could be used in your presenters, controllers, models, etc.
+This extension register DateTimeFactory to you container. This service could be used in your presenters, controllers,
+models, etc.
 
 ```php
 use FastyBird\DateTimeFactory;
@@ -65,4 +66,5 @@ class YourCustomPresenter
 The only one method of factory: `$dateTimeFactory->getNow()` is returning immutable DateTime object.
 
 ***
-Homepage [http://www.fastybird.com](http://www.fastybird.com) and repository [https://github.com/FastyBird/datetime-factory](https://github.com/FastyBird/datetime-factory).
+Homepage [http://www.fastybird.com](http://www.fastybird.com) and
+repository [https://github.com/FastyBird/datetime-factory](https://github.com/FastyBird/datetime-factory).

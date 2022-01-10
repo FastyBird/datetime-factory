@@ -27,7 +27,6 @@ final class DateTimeFactoryTest extends BaseMockeryTestCase
 		Assert::notSame($first, $second);
 	}
 
-
 	public function testGetNow(): void
 	{
 		$dateTimeFactory = $this->createContainer()->getByType(DateTimeFactory\DateTimeFactory::class);
@@ -52,7 +51,8 @@ final class DateTimeFactoryTest extends BaseMockeryTestCase
 
 		Assert::same('UTC', $dateTimeFactory->getNow()->getTimezone()->getName());
 
-		$dateTimeFactory = $this->createContainer(__DIR__ . '/timezone.neon')->getByType(DateTimeFactory\DateTimeFactory::class);
+		$dateTimeFactory = $this->createContainer(__DIR__ . '/timezone.neon')
+			->getByType(DateTimeFactory\DateTimeFactory::class);
 
 		Assert::same('Europe/Amsterdam', $dateTimeFactory->getNow()->getTimezone()->getName());
 	}

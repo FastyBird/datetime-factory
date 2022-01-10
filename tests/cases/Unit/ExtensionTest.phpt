@@ -27,7 +27,7 @@ final class ExtensionTest extends BaseMockeryTestCase
 	 */
 	protected function createContainer(): Nette\DI\Container
 	{
-		$rootDir = __DIR__ . '/../../';
+		$rootDir = __DIR__ . '/../../..';
 
 		$config = new Nette\Configurator();
 		$config->setTempDirectory(TEMP_DIR);
