@@ -1,8 +1,8 @@
 {
-  "name": "fastybird/datetime-factory",
-  "type": "library",
-  "description": "Date & time service factory with timezones support",
-  "keywords": [
+  "name" : "fastybird/datetime-factory",
+  "type" : "library",
+  "description" : "Date & time service factory with timezones support",
+  "keywords" : [
     "fastybird",
     "fb",
     "libs",
@@ -11,76 +11,77 @@
     "library"
   ],
 
-  "homepage": "https://www.fastybird.com",
+  "homepage" : "https://www.fastybird.com",
 
-  "license": "Apache-2.0",
+  "license" : "Apache-2.0",
 
-  "authors": [
+  "authors" : [
     {
-      "name": "FastyBird s.r.o.",
-      "email": "info@fastybird.com",
-      "homepage": "https://www.fastybird.com"
+      "name" : "FastyBird s.r.o.",
+      "email" : "info@fastybird.com",
+      "homepage" : "https://www.fastybird.com"
     },
     {
-      "name": "Adam Kadlec",
-      "email": "adam.kadlec@fastybird.com"
+      "name" : "Adam Kadlec",
+      "email" : "adam.kadlec@fastybird.com"
     }
   ],
 
-  "support": {
-    "email": "code@fastybird.com",
-    "issues": "https://github.com/FastyBird/datetime-factory/issues",
-    "source": "https://github.com/FastyBird/datetime-factory"
+  "support" : {
+    "email" : "code@fastybird.com",
+    "issues" : "https://github.com/FastyBird/datetime-factory/issues",
+    "source" : "https://github.com/FastyBird/datetime-factory"
   },
 
-  "prefer-stable": true,
+  "prefer-stable" : true,
 
-  "minimum-stability": "stable",
+  "minimum-stability" : "stable",
 
-  "require": {
-    "php": ">=8.0.0|>=8.1.0",
-    "nette/bootstrap": "^3.1",
-    "nette/di": "^3.0",
-    "nette/utils": "^3.2"
+  "require" : {
+    "php" : ">=8.1.0",
+    "nette/bootstrap" : "^3.1",
+    "nette/di" : "^3.0",
+    "nette/utils" : "^3.2"
   },
 
-  "require-dev": {
-    "mockery/mockery": "^1.4",
-    "ninjify/nunjuck": "^0.3",
-    "ninjify/qa": "^0.13",
-    "pds/skeleton": "^1.0",
-    "phpstan/extension-installer": "^1.1",
-    "phpstan/phpstan": "^1.3",
-    "phpstan/phpstan-deprecation-rules": "^1.0",
-    "phpstan/phpstan-nette": "^1.0",
-    "phpstan/phpstan-strict-rules": "^1.1",
-    "tracy/tracy": "^2.9"
+  "require-dev" : {
+    "mockery/mockery" : "^1.4",
+    "ninjify/nunjuck" : "^0.3",
+    "orisai/coding-standard" : "^3.2",
+    "pds/skeleton" : "^1.0",
+    "php-parallel-lint/php-parallel-lint" : "^1.3",
+    "phpstan/extension-installer" : "^1.1",
+    "phpstan/phpstan" : "^1.3",
+    "phpstan/phpstan-deprecation-rules" : "^1.0",
+    "phpstan/phpstan-nette" : "^1.0",
+    "phpstan/phpstan-strict-rules" : "^1.1",
+    "tracy/tracy" : "^2.9"
   },
 
-  "autoload": {
-    "psr-4": {
-      "FastyBird\\DateTimeFactory\\": "src/"
+  "autoload" : {
+    "psr-4" : {
+      "FastyBird\\DateTimeFactory\\" : "src/"
     }
   },
 
-  "autoload-dev": {
-    "psr-4": {
-      "Tests\\Cases\\": "tests/cases",
-      "Tests\\Fixtures\\": "tests/fixtures"
+  "autoload-dev" : {
+    "psr-4" : {
+      "Tests\\Cases\\" : "tests/cases",
+      "Tests\\Fixtures\\" : "tests/fixtures"
     }
   },
 
-  "config": {
-    "sort-packages": true,
-    "allow-plugins": {
-      "dealerdirect/phpcodesniffer-composer-installer": true,
-      "phpstan/extension-installer": true
+  "config" : {
+    "sort-packages" : true,
+    "allow-plugins" : {
+      "dealerdirect/phpcodesniffer-composer-installer" : true,
+      "phpstan/extension-installer" : true
     }
   },
 
-  "extra": {
-    "patches": {
-      "nette/utils": {
+  "extra" : {
+    "patches" : {
+      "nette/utils" : {
         "Bug: Offset check with null support" : "https://raw.githubusercontent.com/FastyBird/libraries-patches/master/nette.array.offsetCheck.diff"
       }
     }

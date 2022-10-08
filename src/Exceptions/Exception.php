@@ -1,12 +1,12 @@
 <?php declare(strict_types = 1);
 
 /**
- * IException.php
+ * Exception.php
  *
  * @license        More in LICENSE.md
  * @copyright      https://www.fastybird.com
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>
- * @package        FastyBird:DateTimeFactory!
+ * @package        FastyBird:Factory!
  * @subpackage     Exceptions
  * @since          0.1.0
  *
@@ -17,7 +17,7 @@ namespace FastyBird\DateTimeFactory\Exceptions;
 
 use Throwable;
 
-interface IException extends Throwable
+interface Exception extends Throwable
 {
 
 }

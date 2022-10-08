@@ -19,7 +19,7 @@ final class ExtensionTest extends BaseMockeryTestCase
 	{
 		$container = $this->createContainer();
 
-		Assert::notNull($container->getByType(DateTimeFactory\DateTimeFactory::class));
+		Assert::notNull($container->getByType(DateTimeFactory\Factory::class));
 	}
 
 	/**

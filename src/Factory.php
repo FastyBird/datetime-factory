@@ -6,7 +6,7 @@
  * @license        More in LICENSE.md
  * @copyright      https://www.fastybird.com
  * @author         Adam Kadlec <adam.kadlec@fastybird.com>
- * @package        FastyBird:DateTimeFactory!
+ * @package        FastyBird:Factory!
  * @subpackage     common
  * @since          0.1.0
  *
@@ -20,23 +20,18 @@ use DateTimeInterface;
 use DateTimeZone;
 use Nette;
 
-class DateTimeFactory
+class Factory
 {
 
 	use Nette\SmartObject;
 
-	/** @var DateTimeZone */
-	private $timezone;
+	private DateTimeZone $timezone;
 
-	public function __construct(
-		string $timezone = 'Europe/Prague'
-	) {
+	public function __construct(string $timezone = 'Europe/Prague')
+	{
 		$this->timezone = new DateTimeZone($timezone);
 	}
 
-	/**
-	 * @return DateTimeInterface
-	 */
 	public function getNow(): DateTimeInterface
 	{
 		$dateTime = new DateTimeImmutable();
