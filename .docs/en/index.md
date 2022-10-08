@@ -2,6 +2,8 @@
 
 This extension adds support for creating date&time immutable objects.
 
+***
+
 ## Installation
 
 The best way to install **fastybird/datetime-factory** is using [Composer](http://getcomposer.org/):
