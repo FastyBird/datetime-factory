@@ -13,12 +13,12 @@ require_once __DIR__ . '/../../bootstrap.php';
 /**
  * @testCase
  */
-final class DateTimeFactoryTest extends BaseMockeryTestCase
+final class SystemClockTest extends BaseMockeryTestCase
 {
 
 	public function testType(): void
 	{
-		$dateTimeFactory = $this->createContainer()->getByType(DateTimeFactory\Factory::class);
+		$dateTimeFactory = $this->createContainer()->getByType(DateTimeFactory\Clock::class);
 
 		$first = $dateTimeFactory->getNow();
 		$second = $dateTimeFactory->getNow();
@@ -29,7 +29,7 @@ final class DateTimeFactoryTest extends BaseMockeryTestCase
 
 	public function testGetNow(): void
 	{
-		$dateTimeFactory = $this->createContainer()->getByType(DateTimeFactory\Factory::class);
+		$dateTimeFactory = $this->createContainer()->getByType(DateTimeFactory\Clock::class);
 
 		$before = new DateTimeImmutable();
 		$first = $dateTimeFactory->getNow();
@@ -47,12 +47,12 @@ final class DateTimeFactoryTest extends BaseMockeryTestCase
 
 	public function testTimeZone(): void
 	{
-		$dateTimeFactory = $this->createContainer()->getByType(DateTimeFactory\Factory::class);
+		$dateTimeFactory = $this->createContainer()->getByType(DateTimeFactory\Clock::class);
 
 		Assert::same('UTC', $dateTimeFactory->getNow()->getTimezone()->getName());
 
 		$dateTimeFactory = $this->createContainer(__DIR__ . '/timezone.neon')
-			->getByType(DateTimeFactory\Factory::class);
+			->getByType(DateTimeFactory\Clock::class);
 
 		Assert::same('Europe/Amsterdam', $dateTimeFactory->getNow()->getTimezone()->getName());
 	}
@@ -66,13 +66,13 @@ final class DateTimeFactoryTest extends BaseMockeryTestCase
 	{
 		$rootDir = __DIR__ . '/../../';
 
-		$config = new Nette\Configurator();
+		$config = new Nette\Bootstrap\Configurator();
 		$config->setTempDirectory(TEMP_DIR);
 
-		$config->addParameters(['container' => ['class' => 'SystemContainer_' . md5((string) time())]]);
-		$config->addParameters(['appDir' => $rootDir, 'wwwDir' => $rootDir]);
+		$config->addStaticParameters(['container' => ['class' => 'SystemContainer_' . md5((string) time())]]);
+		$config->addStaticParameters(['appDir' => $rootDir, 'wwwDir' => $rootDir]);
 
-		if ($additionalConfig && file_exists($additionalConfig)) {
+		if ($additionalConfig !== null && file_exists($additionalConfig)) {
 			$config->addConfig($additionalConfig);
 		}
 
@@ -83,5 +83,5 @@ final class DateTimeFactoryTest extends BaseMockeryTestCase
 
 }
 
-$test_case = new DateTimeFactoryTest();
+$test_case = new SystemClockTest();
 $test_case->run();

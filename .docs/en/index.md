@@ -25,7 +25,9 @@ This extension has some configuration options:
 
 ```neon
 fbDateTimeFactory:
-    timezone: Europe/Prague
+    timeZone: Europe/Prague
+    system: true # Use system clock
+    frozen: unixtimestam or DateTimeInterface # Could be used in tests for easy date settings
 ```
 
 Where:
@@ -43,20 +45,20 @@ use FastyBird\DateTimeFactory;
 class YourCustomPresenter
 {
 
-    /** @var DateTimeFactory\Factory */
-    private DateTimeFactory\Factory $dateTimeFactory;
+    /** @var DateTimeFactory\Clock */
+    private DateTimeFactory\Clock $dateTimeFactory;
     
     public function __construct(
-        DateTimeFactory\Factory $dateTimeFactory
+        DateTimeFactory\Clock $dateTimeFactory
     ) {
-        $this->dateTimeFactory = $dateTimeFactory;
+        $this->dateTime = $dateTime;
     }
 
     public function actionSomethingToDo()
     {
         // your cool code here...
 
-        $now = $this->dateTimeFactory->getNow();
+        $now = $this->dateTime->getNow();
 
         $article->setCreatedAt($now);
 
@@ -65,7 +67,7 @@ class YourCustomPresenter
 }
 ```
 
-The only one method of factory: `$dateTimeFactory->getNow()` is returning immutable DateTime object.
+The only one method of factory: `$dateTime->getNow()` is returning immutable DateTime object.
 
 ***
 Homepage [http://www.fastybird.com](http://www.fastybird.com) and

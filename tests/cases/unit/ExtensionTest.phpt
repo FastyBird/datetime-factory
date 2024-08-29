@@ -19,7 +19,7 @@ final class ExtensionTest extends BaseMockeryTestCase
 	{
 		$container = $this->createContainer();
 
-		Assert::notNull($container->getByType(DateTimeFactory\Factory::class));
+		Assert::notNull($container->getByType(DateTimeFactory\SystemClock::class));
 	}
 
 	/**
@@ -29,11 +29,11 @@ final class ExtensionTest extends BaseMockeryTestCase
 	{
 		$rootDir = __DIR__ . '/../../..';
 
-		$config = new Nette\Configurator();
+		$config = new Nette\Bootstrap\Configurator();
 		$config->setTempDirectory(TEMP_DIR);
 
-		$config->addParameters(['container' => ['class' => 'SystemContainer_' . md5((string) time())]]);
-		$config->addParameters(['appDir' => $rootDir, 'wwwDir' => $rootDir]);
+		$config->addStaticParameters(['container' => ['class' => 'SystemContainer_' . md5((string) time())]]);
+		$config->addStaticParameters(['appDir' => $rootDir, 'wwwDir' => $rootDir]);
 
 		DateTimeFactory\DI\DateTimeFactoryExtension::register($config);
 
