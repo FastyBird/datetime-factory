@@ -1,7 +1,7 @@
 <?php declare(strict_types = 1);
 
 /**
- * DateFactory.php
+ * SystemClock.php
  *
  * @license        More in LICENSE.md
  * @copyright      https://www.fastybird.com
@@ -19,26 +19,24 @@ use DateTimeImmutable;
 use DateTimeInterface;
 use DateTimeZone;
 use Nette;
+use function date_default_timezone_get;
 
-class Factory
+class SystemClock implements Clock
 {
 
 	use Nette\SmartObject;
 
-	private DateTimeZone $timezone;
+	private DateTimeZone $timeZone;
 
-	public function __construct(string $timezone = 'Europe/Prague')
+	public function __construct(DateTimeZone|null $timeZone = null)
 	{
-		$this->timezone = new DateTimeZone($timezone);
+		$this->timeZone = $timeZone ?? new DateTimeZone(date_default_timezone_get());
 	}
 
 	public function getNow(): DateTimeInterface
 	{
-		$dateTime = new DateTimeImmutable();
-
-		$dateTime = $dateTime->setTimezone($this->timezone);
-
-		return $dateTime;
+		return (new DateTimeImmutable('now'))
+			->setTimezone($this->timeZone);
 	}
 
 }

@@ -43,11 +43,11 @@ use FastyBird\DateTimeFactory;
 class YourCustomPresenter
 {
 
-    /** @var DateTimeFactory\Factory */
-    private DateTimeFactory\Factory $dateTimeFactory;
+    /** @var DateTimeFactory\DateTime */
+    private DateTimeFactory\DateTime $dateTimeFactory;
     
     public function __construct(
-        DateTimeFactory\Factory $dateTimeFactory
+        DateTimeFactory\DateTime $dateTimeFactory
     ) {
         $this->dateTimeFactory = $dateTimeFactory;
     }

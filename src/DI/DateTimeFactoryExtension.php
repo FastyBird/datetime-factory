@@ -37,22 +37,24 @@ class DateTimeFactoryExtension extends DI\CompilerExtension
 {
 
 	public static function register(
-		Nette\Configurator $config,
+		Nette\Bootstrap\Configurator $config,
 		string $extensionName = 'dateTimeFactory',
 	): void
 	{
 		$config->onCompile[] = static function (
-			Nette\Configurator $config,
+			Nette\Bootstrap\Configurator $config,
 			DI\Compiler $compiler,
 		) use ($extensionName): void {
-			$compiler->addExtension($extensionName, new DateTimeFactoryExtension());
+			$compiler->addExtension($extensionName, new self());
 		};
 	}
 
 	public function getConfigSchema(): Schema\Schema
 	{
 		return Schema\Expect::structure([
-			'timezone' => Schema\Expect::string('UTC'),
+			'timeZone' => Schema\Expect::string('UTC'),
+			'system' => Schema\Expect::bool(true),
+			'frozen' => Schema\Expect::anyOf(Schema\Expect::float(), Schema\Expect::mixed()),
 		]);
 	}
 
@@ -63,14 +65,23 @@ class DateTimeFactoryExtension extends DI\CompilerExtension
 		assert($configuration instanceof stdClass);
 
 		if (
-			!in_array($configuration->timezone, DateTimeZone::listIdentifiers(), true)
+			!in_array($configuration->timeZone, DateTimeZone::listIdentifiers(), true)
 		) {
 			throw new Exceptions\InvalidArgument('Timezone have to be valid PHP timezone string');
 		}
 
-		$builder->addDefinition($this->prefix('datetime.factory'), new DI\Definitions\ServiceDefinition())
-			->setType(DateTimeFactory\Factory::class)
-			->setArgument('timezone', $configuration->timezone);
+		if ($configuration->system) {
+			$builder->addDefinition($this->prefix('datetime.factory'), new DI\Definitions\ServiceDefinition())
+				->setType(DateTimeFactory\SystemClock::class)
+				->setArgument('timeZone', new DateTimeZone($configuration->timeZone));
+		} elseif ($configuration->frozen !== null) {
+			$builder->addDefinition($this->prefix('datetime.factory'), new DI\Definitions\ServiceDefinition())
+				->setType(DateTimeFactory\FrozenClock::class)
+				->setArguments([
+					'timestamp' => $configuration->frozen,
+					'timeZone' => new DateTimeZone($configuration->timeZone),
+				]);
+		}
 	}
 
 }
