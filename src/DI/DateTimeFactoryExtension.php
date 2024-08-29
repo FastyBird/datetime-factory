@@ -71,14 +71,14 @@ class DateTimeFactoryExtension extends DI\CompilerExtension
 		}
 
 		if ($configuration->system) {
-			$builder->addDefinition($this->prefix('datetime.factory'), new DI\Definitions\ServiceDefinition())
+			$builder->addDefinition($this->prefix('datetime.system'), new DI\Definitions\ServiceDefinition())
 				->setType(DateTimeFactory\SystemClock::class)
 				->setArgument('timeZone', new DateTimeZone($configuration->timeZone))
 				->setAutowired($configuration->frozen === null);
 		}
 
 		if ($configuration->frozen !== null) {
-			$builder->addDefinition($this->prefix('datetime.factory'), new DI\Definitions\ServiceDefinition())
+			$builder->addDefinition($this->prefix('datetime.frozen'), new DI\Definitions\ServiceDefinition())
 				->setType(DateTimeFactory\FrozenClock::class)
 				->setArguments([
 					'timestamp' => $configuration->frozen,
